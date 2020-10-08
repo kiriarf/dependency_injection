@@ -1,15 +1,13 @@
 class SayHello
   def initialize(client = EmailClient.new)
     @client = client
-    @messages = []
   end
 
   def run
-    @messages << @client.message.send(
+    @client.message.send(
       "friend@example.com",
       "HELLO!"
     )
-    puts @messages
   end
 end
 
